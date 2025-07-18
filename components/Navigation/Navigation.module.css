@@ -1,0 +1,183 @@
+/*
+Here are some styles to get you going :)
+*/
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* your font here! */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-size: 20px;
+}
+
+.linksContainer {
+  margin-right: 40px;
+}
+
+/* https://www.30secondsofcode.org/css/s/hover-underline-animation/ */
+
+.linkText {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  position: relative;
+}
+
+.linkText::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: hotpink;
+  transition: transform 0.25s ease-out;
+}
+
+.linkText:hover::after {
+  transform: scaleX(1);
+}
+
+.linkText::after {
+  transform-origin: bottom center;
+}
+
+.linkText:hover::after {
+  transform-origin: bottom center;
+}
+
+.burgerContainer {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .image {
+    width: 80%;
+  }
+  .linksContainer {
+    display: none;
+  }
+  .burgerContainer {
+    display: flex;
+  }
+}
+
+.hamburger {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  margin-right: 20px;
+  align-items: center;
+  z-index: 999;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.burger1,
+.burger2,
+.burger3 {
+  width: 2.2rem;
+  height: 0.2rem;
+  border-radius: 10px;
+  background-color: black;
+  transform-origin: -0.5px;
+  transition: all 0.2s linear;
+}
+
+.burgerTop {
+  transform: rotate(45deg);
+}
+
+.burgerMid {
+  opacity: 0;
+}
+
+.burgerBottom {
+  transform: rotate(-45deg);
+}
+
+.clear {
+  clear: both;
+}
+
+@keyframes slide-in {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100vw;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    width: 100vw;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.slideIn {
+  animation: slide-in 0.3s ease forwards;
+}
+
+.slideOut {
+  animation: slide-out 0.3s ease forwards;
+}
+
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: white;
+  z-index: 998;
+  overflow: hidden;
+}
+
+.mobileList {
+  list-style-type: none;
+  font-size: 35px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.mobileLinks {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+}
+
+.mobileLinks::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: hotpink;
+  transition: transform 0.1s ease-out;
+  transform-origin: left;
+}
+
+.mobileLinks:hover::after,
+.mobileLinks:focus::after,
+.mobileLinks:active::after {
+  transform: scaleX(1);
+}
