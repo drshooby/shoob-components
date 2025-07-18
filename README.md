@@ -1,5 +1,7 @@
 # Welcome to Shoob Components
 
+Requirements: Next.js, React, TypeScript
+
 For all components, minimal styles have been added for demo-ing and basic usability
 
 ## Responsive Navigation
